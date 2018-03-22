@@ -1,0 +1,2 @@
+model_checkpoint_path: "C:\\Users\\Nahid\\Documents\\MachineLearningProjects\\#GenderCLassification\\GenderClassification_TFLearn\\models\\tflearn_genderClassification_model.model"
+all_model_checkpoint_paths: "C:\\Users\\Nahid\\Documents\\MachineLearningProjects\\#GenderCLassification\\GenderClassification_TFLearn\\models\\tflearn_genderClassification_model.model"

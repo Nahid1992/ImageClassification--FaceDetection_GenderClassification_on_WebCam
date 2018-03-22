@@ -21,7 +21,7 @@ def analyzeFace(model,img_face):
     else:
         gender = 'Male'
 
-    return imageSize,gender
+    return imageSize,gender,predict_gender
 
 def load_cascade():
     face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
@@ -56,7 +56,7 @@ def main():
             cv2.rectangle( img, (x,y), (x+w,y+h), (255,255,0), 1 )
             roi_gray = gray[y:y+h, x:x+w]
             roi_color = img[y:y+h, x:x+w]
-            ret_size,gender = analyzeFace(model,roi_color)
+            ret_size,gender,predict_gender = analyzeFace(model,roi_color)
             cv2.putText(img,gender,(x-10,y-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,0))
             '''
             eyes = eye_cascade.detectMultiScale(roi_gray)
@@ -66,7 +66,7 @@ def main():
 
         cv2.imshow('WebCam',img)
         #cv2.imshow('faceImage',roi_color)
-        print('Frame Number = ' + str(frameNumber) + ' -> Face_shape -> ' + str(ret_size))
+        print('Frame Number = ' + str(frameNumber) + ' -> Face_shape -> ' + str(ret_size) + ' -> ' + str(predict_gender))
         k = cv2.waitKey(30) & 0xff
         if k == 27:
             break

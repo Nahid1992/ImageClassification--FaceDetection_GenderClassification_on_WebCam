@@ -10,6 +10,7 @@ def analyzeFace(model,img_face):
     img_face = cv2.resize(img_face, (128, 128))
     img_face = cv2.cvtColor(img_face,cv2.COLOR_BGR2GRAY)
     img_face = img_face.reshape(128,128,1)
+    img_face = img_face/255
 
     # 1 = Male; 0 = Female
     predict_gender = model.predict([img_face])

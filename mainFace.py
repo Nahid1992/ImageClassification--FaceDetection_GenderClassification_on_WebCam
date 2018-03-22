@@ -47,6 +47,9 @@ def main():
 
     frameNumber = 0
     while True:
+        predict_gender = 'None'
+        ret_size = 'None'
+        
         ret,img = cam.read()
         frameNumber = frameNumber + 1
 
